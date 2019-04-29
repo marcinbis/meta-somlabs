@@ -18,6 +18,7 @@ SYSTEM_TOOLS_INSTALL = " \
     tzdata \
     devmem2 \
     minicom \
+    u-boot-somlabs-fw-utils \
 "
 
 KERNEL_EXTRA_INSTALL = " \
@@ -63,6 +64,13 @@ WIFI_SUPPORT = " \
     iproute2 \
     iproute2-tc \
 "
+
+SWUPDATE = " \
+    libconfig \
+    swupdate \
+    swupdate-www \
+    util-linux-sfdisk \
+"
  
 IMAGE_INSTALL += " \
   ${SYSTEM_TOOLS_INSTALL} \
@@ -71,6 +79,7 @@ IMAGE_INSTALL += " \
   ${WIFI_SUPPORT} \
   ${KERNEL_EXTRA_INSTALL} \
   ${TSLIB} \
+  ${SWUPDATE} \
 "
 
 #Always add cmake to sdk
