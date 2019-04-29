@@ -3,22 +3,22 @@ SoMLabs layer.
 
 Please see the corresponding sections below for details.
 
-Please see http://wiki.somlabs.com/index.php?title=VisionSOM-6ULL for a detailed configuration and build configuration.
+Please see https://github.com/marcinbis/somlabs-bsp for a detailed configuration and build configuration.
 
 Dependencies
 ============
 
 This layer depends on:
 
-  FSL Community BSP
-  URI: http://freescale.github.io/
-  branch: rocko
+  SoMLabs BSP (based on Freescale/NXP community BSP)
+  URI: https://github.com/marcinbis/somlabs-bsp
+  branch: thud
 
 
 Patches
 =======
 
-Maintainer: Michal Wolowik <michwolo@gmail.com>
+Maintainer: Marcin Bis <marcin@bis-linux.com>
 
 Contents
 ========
