@@ -12,7 +12,7 @@ This layer depends on:
 
   SoMLabs BSP (based on Freescale/NXP community BSP)
   URI: https://github.com/marcinbis/somlabs-bsp
-  branch: thud
+  branch: warrior
 
 
 Patches
@@ -26,4 +26,4 @@ Contents
 This layer contains:
  * visionsom6ull machine definition,
  * somlabs-linux - reference distro,
- * console-image and qt5-image
+ * console-image, qt5-image and update-image
