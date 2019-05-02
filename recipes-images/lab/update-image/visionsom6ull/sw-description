@@ -1,0 +1,27 @@
+software =
+{
+	version = "0.1.0";
+
+	visionsom6ull = {
+		hardware-compatibility: [ "1.0" ];
+
+		files: (
+			{
+				filename = "console-image-visionsom6ull.tar.gz";
+				type = "archive";
+				compressed = true;
+				device = "/dev/update";
+				filesystem = "ext4";
+				preserve-attributes = true;
+				path = "/";
+			}
+		);
+
+		scripts: (
+			{
+				filename = "update.sh";
+				type = "shellscript";
+			}
+		);
+	};
+}
