@@ -70,6 +70,7 @@ SWUPDATE = " \
     swupdate \
     swupdate-www \
     util-linux-sfdisk \
+    e2fsprogs-mke2fs \
 "
  
 IMAGE_INSTALL += " \
