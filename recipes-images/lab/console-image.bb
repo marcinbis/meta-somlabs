@@ -85,6 +85,3 @@ IMAGE_INSTALL += " \
 
 #Always add cmake to sdk
 TOOLCHAIN_HOST_TASK_append = " nativesdk-cmake"
-
-PACKAGECONFIG_DISTRO_append_pn_qtbase = " linuxfb tslib "
-
