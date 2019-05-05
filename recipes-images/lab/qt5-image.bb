@@ -1,6 +1,8 @@
 DESCRIPTION = "A QT5 image with wifi support application for SoMLabs Board"
 LICENSE = "MIT"
 
+IMAGE_FEATURES += "package-management ssh-server-openssh splash"
+
 NETWORK_APP = " \
     openssh openssh-keygen openssh-sftp-server \
 "
@@ -9,10 +11,6 @@ IMAGE_LINGUAS = "pl-pl"
 
 inherit core-image
 
-IMAGE_FEATURES += " \
-    splash \
-"
-
 SYSTEM_TOOLS_INSTALL = " \
     i2c-tools \
     memtester \
@@ -20,6 +18,7 @@ SYSTEM_TOOLS_INSTALL = " \
     tzdata \
     devmem2 \
     minicom \
+    u-boot-somlabs-fw-utils \
 "
 
 QT_TOOLS = " \
@@ -53,10 +52,6 @@ DEV_TOOLS_INSTALL = " \
     mtd-utils \
 "
 
-NETWORK_TOOLS_INSTALL = " \
-"
-
-
 UTILITIES_INSTALL = " \
     coreutils \
     gdbserver \
@@ -67,6 +62,8 @@ UTILITIES_INSTALL = " \
     openssh-sftp \
     resize-rootfs \
     ppp \
+    rng-tools \
+    util-linux \
 "
 
 TSLIB = " \
@@ -81,6 +78,20 @@ WIFI_SUPPORT = " \
     crda \
     iw \
     wpa-supplicant \
+    bluez5 \
+    wpa-supplicant-passphrase \
+    wpa-supplicant-cli \
+    network-config-misc \
+    iproute2 \
+    iproute2-tc \
+"
+
+SWUPDATE = " \
+    libconfig \
+    swupdate \
+    swupdate-www \
+    util-linux-sfdisk \
+    e2fsprogs-mke2fs \
 "
  
 IMAGE_INSTALL += " \
@@ -93,15 +104,10 @@ IMAGE_INSTALL += " \
   ${QT_TOOLS} \
   ${KERNEL_EXTRA_INSTALL} \
   ${TSLIB} \
+  ${SWUPDATE} \
 "
 
 #Always add cmake to sdk
 TOOLCHAIN_HOST_TASK_append = " nativesdk-cmake"
 
-#Always add cmake to sdk
-TOOLCHAIN_HOST_TASK_append = " nativesdk-cmake"
-
-DISTRO_FEATURES_remove = " x11 wayland opengl pulseaudio opengles egl xcb "
-PACKAGECONFIG_DISTRO_append_pn_qtbase = " linuxfb tslib "
-IMAGE_INSTALL_append = " qtbase qtbase-plugins "
-
+inherit populate_sdk_qt5
