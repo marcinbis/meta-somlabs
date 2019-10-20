@@ -12,7 +12,7 @@ This layer depends on:
 
   SoMLabs BSP (based on Freescale/NXP community BSP)
   URI: https://github.com/marcinbis/somlabs-bsp
-  branch: warrior
+  branch: zeus
 
 
 Patches
